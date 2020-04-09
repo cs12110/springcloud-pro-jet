@@ -1,0 +1,13 @@
+server:
+  port: 7200
+  servlet:
+    context-path: /api/order
+
+spring:
+  application:
+    name: pro-jet-order
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka

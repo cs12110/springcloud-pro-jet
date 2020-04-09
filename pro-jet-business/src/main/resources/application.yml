@@ -1,0 +1,24 @@
+server:
+  port: 7100
+  servlet:
+    context-path: /api/business/
+
+
+spring:
+  application:
+    name: pro-jet-business
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka/
+
+
+feign:
+  httpclient:
+    enabled: true
+
+
+
