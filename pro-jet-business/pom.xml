@@ -25,6 +25,11 @@
 
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>springcloud-pro-jet</groupId>
             <artifactId>pro-jet-feign</artifactId>
             <version>${pro-jet-feign-version}</version>

@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(ServiceRouteConst.ORDER_SERVICE_ID)
 public interface OrderFeignService {
 
-
     /**
      * 创建订单
      *

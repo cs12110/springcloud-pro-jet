@@ -1,7 +1,25 @@
 server:
-  port: 7100
+  port: 8000
 
 
 spring:
   application:
     name: pro-jet-gateway
+  cloud:
+    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+      routes:
+        - id: biz
+          uri: lb://PRO-JET-BUSINESS
+          predicates:
+            - Path=/biz/**
+          filters:
+            - StripPrefix=1
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7000/eureka/
