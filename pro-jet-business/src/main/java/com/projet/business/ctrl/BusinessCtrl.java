@@ -31,6 +31,7 @@ public class BusinessCtrl {
     public BaseResponse create(@RequestBody BusinessInfoRequest businessInfoRequest) {
 
         log.info("Function[create] body:{}", businessInfoRequest);
+        businessInfoRequest.setCreator("3307");
 
 
         OrderInfoRequest orderInfoRequest = new OrderInfoRequest();
@@ -40,9 +41,11 @@ public class BusinessCtrl {
         orderInfoRequest.setPrice(137L);
 
         BaseResponse baseResponse = orderFeignService.create(orderInfoRequest);
+        log.info("Function[create] order result post:{}", baseResponse);
 
+        BaseResponse display = orderFeignService.display(orderInfoRequest);
+        log.info("Function[create] order result get:{}", display);
 
-        log.info("Function[create] order result:{}", baseResponse);
 
         return BaseResponse.success(businessInfoRequest);
     }

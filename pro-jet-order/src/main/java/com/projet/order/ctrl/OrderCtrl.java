@@ -5,11 +5,13 @@ import com.projet.common.model.request.order.OrderInfoRequest;
 import com.projet.common.model.response.BaseResponse;
 import com.projet.feign.business.BusinessFeignService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -33,6 +35,17 @@ public class OrderCtrl {
         log.info("Function[create] request info:{}", orderInfoRequest);
 
         orderInfoRequest.setPrice(orderInfoRequest.getPrice() - 100);
+        return BaseResponse.success(orderInfoRequest);
+    }
+
+
+    @GetMapping("/display")
+    public Object display(@RequestBody OrderInfoRequest orderInfoRequest) {
+
+        log.info("Function[display] request info:{}", orderInfoRequest);
+
+        orderInfoRequest.setPrice(3306L);
+
         return BaseResponse.success(orderInfoRequest);
     }
 

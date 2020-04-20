@@ -29,4 +29,16 @@ public interface OrderFeignService {
             method = RequestMethod.POST
     )
     BaseResponse create(@RequestBody OrderInfoRequest orderInfoRequest);
+
+    /**
+     * display info
+     *
+     * @param orderInfoRequest request
+     * @return BaseResponse
+     */
+    @RequestMapping(
+            value = ServiceRouteConst.ORDER_API_PREFIX + "/display",
+            method = RequestMethod.GET
+    )
+    BaseResponse display(OrderInfoRequest orderInfoRequest);
 }

@@ -1,6 +1,7 @@
 package com.projet.common.model.response;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.annotation.JSONField;
 import com.projet.common.enums.CommonCodeEnum;
 import lombok.Data;
 
@@ -21,6 +22,7 @@ public class BaseResponse<T> {
 
     private String message;
 
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     private Date time;
 
     private T data;
