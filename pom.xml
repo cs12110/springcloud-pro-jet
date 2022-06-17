@@ -26,7 +26,7 @@
     <properties>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
 
-        <fast-json-version>1.2.30</fast-json-version>
+        <fast-json-version>1.2.83</fast-json-version>
         <lombok-version>1.18.4</lombok-version>
     </properties>
 
